@@ -83,6 +83,7 @@ section{padding:96px 0}
 .sec-head{max-width:760px;margin-left:auto;margin-right:auto;text-align:center}
 .sec-head h2{font-size:clamp(1.5rem,2.5vw,2.1rem);margin-top:20px;color:var(--navy)}
 .sec-head.on-dark h2{color:var(--bone)}
+.sec-head.on-dark .eyebrow{color:var(--brass-light)}
 .sec-head p{margin:20px auto 0;font-size:1.06rem;color:var(--steel);max-width:62ch}
 
 /* PROSE (overview / about) */
@@ -191,6 +192,7 @@ footer{background:var(--ink);color:var(--bone);padding:72px 0 40px}
 .foot-brand{max-width:34ch}
 .foot-brand .brand{margin-bottom:20px}
 .foot-brand .brand .name{color:var(--bone)}
+.foot-brand .brand .sub{color:#AEB7C0}
 .foot-brand p{color:#AEB7C0;font-size:.98rem}
 .foot-nav{display:flex;gap:70px}
 .foot-col h3{font-family:var(--display);font-weight:600;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-light);margin-bottom:16px}
