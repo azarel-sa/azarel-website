@@ -2,6 +2,28 @@
 
 Static website hosted on GitHub Pages at https://azarelsa.com.
 
+## SEO and loading
+
+- GitHub Pages has HTTPS enforcement enabled. Keep the non-www HTTPS domain
+  as the preferred site URL.
+- Every page has a canonical URL, complete social sharing metadata, and
+  consistent homepage links. `sitemap.xml` lists the three canonical pages;
+  `robots.txt` points to the sitemap and permits public resources.
+- The homepage contains Organization structured data using published company
+  information and the crawlable `assets/images/azarel-logo.svg` mark.
+- Archivo and Inter variable WOFF2 fonts are served from `assets/fonts/`.
+  Their SIL Open Font License files are included alongside them.
+- Responsive WebP hero images are preloaded at high priority. Decorative MP4
+  sources are attached only on desktop, after page load and near the viewport.
+  Mobile, reduced-motion, and data-saving visitors receive static images.
+  Below-fold static images use native lazy loading.
+- Shared CSS and JavaScript URLs use a version query. Bump it when changing
+  loading behavior or styles so returning visitors receive matching files.
+
+GitHub Pages controls HTTP cache headers; this repository does not configure
+a separate CDN. Search Console verification and sitemap submission require
+the site's owner account and are not performed by a source deployment.
+
 ## Contact form
 
 The form in `index.html` posts to [FormSubmit](https://formsubmit.co/), which
