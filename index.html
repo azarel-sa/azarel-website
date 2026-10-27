@@ -130,8 +130,11 @@
           <div class="row"><span class="k">Email</span><span class="v">info@azarelsa.com</span></div>
         </div>
       </div>
-      <!-- FORM: paste your Formspree endpoint into action="" to go live. -->
-      <form id="contactForm" method="POST" action="PASTE_YOUR_FORMSPREE_ENDPOINT_HERE">
+      <!-- FormSubmit: Brendon receives enquiries, with a copy sent to Dylan. -->
+      <form id="contactForm" method="POST" action="https://formsubmit.co/brendon@azarel.com">
+        <input type="hidden" name="_cc" value="dylan@azarel.com">
+        <input type="hidden" name="_subject" value="New enquiry from the AZAREL website">
+        <input type="hidden" name="_template" value="table">
         <div class="field-row">
           <div class="fld"><label for="name">Name</label><input type="text" id="name" name="name" required></div>
           <div class="fld"><label for="org">Company / Organisation</label><input type="text" id="org" name="org"></div>
@@ -147,7 +150,6 @@
         </div>
         <div class="fld"><label for="message">What are you working on?</label><textarea id="message" name="message" required></textarea></div>
         <p class="form-note">Straight to a person who has done the work. No call-centre, no drip campaign.</p>
-        <p class="form-status" role="status" aria-live="polite"></p>
         <button type="submit" class="btn">Send</button>
       </form>
     </div>

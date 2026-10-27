@@ -16,24 +16,5 @@
   });
   // year
   document.querySelectorAll('[data-year]').forEach(function(el){ el.textContent=new Date().getFullYear(); });
-  // contact form graceful degrade (Formspree-ready)
-  var form=document.getElementById('contactForm');
-  if(form){ form.addEventListener('submit', function(e){
-    var endpoint=form.getAttribute('action')||'';
-    var configured = endpoint && endpoint.indexOf('PASTE_YOUR')===-1;
-    var s=form.querySelector('.form-status'), b=form.querySelector('button[type="submit"]'), bt=b?b.textContent:'';
-    if(!configured){
-      e.preventDefault();
-      if(s){ s.textContent='Form not connected yet. Paste your Formspree endpoint into the form action to go live.'; s.classList.add('show'); }
-      if(b){ b.textContent='Message prepared'; }
-      setTimeout(function(){ if(b) b.textContent=bt; if(s) s.classList.remove('show'); form.reset(); }, 4500);
-      return;
-    }
-    e.preventDefault();
-    if(b) b.textContent='Sending…';
-    fetch(endpoint,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}}).then(function(r){
-      if(r.ok){ form.reset(); if(s){ s.textContent='Thank you. It is through, and we will be in touch directly.'; s.classList.add('show'); } if(b) b.textContent='Sent'; }
-      else { throw new Error('bad'); }
-    }).catch(function(){ if(s){ s.textContent='Something went wrong. Please email info@azarelsa.com directly.'; s.classList.add('show'); } if(b) b.textContent=bt; });
-  }); }
+  // The contact form posts directly to FormSubmit for its spam check and confirmation.
 })();
