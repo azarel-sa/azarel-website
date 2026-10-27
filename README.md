@@ -11,6 +11,11 @@ The visitor's `email` field supplies the reply-to address and receives a
 confirmation email through FormSubmit's `_autoresponse` setting.
 No API keys or server are needed in this repository.
 
+The form action uses FormSubmit's public identifier supplied in the activation
+email: `https://formsubmit.co/51d0f501b914166a2df6131f5d294340`.
+FormSubmit associates this identifier with the primary recipient; do not
+replace it with an email address when editing the CC or confirmation settings.
+
 The hidden `_url` field always reports `https://azarelsa.com/` to FormSubmit,
 including when the visitor opens `/index.html` or their browser omits the
 referrer. This matches the public homepage URL shown during activation.
@@ -26,10 +31,8 @@ referrer. This matches the public homepage URL shown during activation.
    that the visitor's email address also receives the automatic confirmation.
 
 If FormSubmit keeps requesting activation after confirmation, verify that
-the activation email was sent to **info@azarelsa.co.za**, not a previous
-recipient. FormSubmit also provides a random-string form endpoint in its
-confirmation email; that endpoint can replace the email-based form action
-without changing the CC recipients, autoresponse, or success return URL.
+the configured identifier matches the activation email for **info@azarelsa.co.za**,
+not a previous recipient, and contact FormSubmit support if it still fails.
 The website cannot inspect or reset FormSubmit's activation state.
 
 The form uses a standard browser POST, keeping FormSubmit's default reCAPTCHA
