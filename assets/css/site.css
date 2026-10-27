@@ -177,8 +177,8 @@ form{display:grid;gap:22px}
 .fld input:focus,.fld textarea:focus,.fld select:focus{border-color:var(--brass)}
 .fld textarea{resize:vertical;min-height:120px}
 .form-note{font-size:.86rem;color:var(--steel)}
-.form-status{font-family:var(--display);font-size:.9rem;font-weight:500;color:var(--navy);display:none}
-.form-status.show{display:block}
+.form-status{font-family:var(--display);font-size:.95rem;font-weight:500;color:var(--navy);background:var(--white);border:1px solid var(--line);padding:16px 18px;scroll-margin-top:96px;display:none}
+.form-status.show,.form-status:target{display:block}
 form .btn{justify-self:start;border:none}
 
 /* FOOTER */
